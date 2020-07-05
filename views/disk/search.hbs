@@ -1,0 +1,20 @@
+<main class="container">
+    <h1>Resultados</h1>
+    <br>
+    <p>Selecciona el disco para mas informacion<p>
+
+        <div class = 'row'>
+
+        {{#each records}}
+            <div class='col-4'>
+                <img src='{{this.image}}'>
+                <p>{{this.title}}<p>
+                <a href= '/search/{{this.id}}'>Ver mas</a>
+            </div>
+        {{/each}}
+
+        </div>
+
+</main>
+
+

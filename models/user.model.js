@@ -1,9 +1,26 @@
+
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const userSchema = new Schema({
-    username: String,
-    password: String
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        unique: true
+    },
+    password: {
+        type: String
+    },
+    avatar: {
+        type: String
+    },
+    role: {
+        type: String,
+        enum: ['ADMIN', 'USER'],
+        default: 'USER'
+    },
+    records: [{type: Schema.Types.ObjectId, ref: 'Disk'}],
+    wishlist: [{type: Schema.Types.ObjectId, ref: 'Disk'}],
+    
 }, {
     timestamps: true
 })
@@ -11,3 +28,5 @@ const userSchema = new Schema({
 const User = mongoose.model("User", userSchema)
 
 module.exports = User
+
+
