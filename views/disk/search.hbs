@@ -1,20 +1,17 @@
-<main class="container">
-    <h1>Resultados</h1>
-    <br>
-    <p>Selecciona el disco para mas informacion<p>
 
-        <div class = 'row'>
+<div class="container justify-content-center">
+<h1>Records found</h1>
+    <div class="row">
+        {{#each data.results}}
+        <div class="col-4">
+            <article class="artist-container">
+                <img src="{{this.cover_image}}" alt="Photo">
+              <a href="/record/{{this.id}}" >{{this.title}}</a>
 
-        {{#each records}}
-            <div class='col-4'>
-                <img src='{{this.image}}'>
-                <p>{{this.title}}<p>
-                <a href= '/search/{{this.id}}'>Ver mas</a>
-            </div>
-        {{/each}}
-
+                
+            </article>
         </div>
 
-</main>
-
-
+        {{/each}}
+    </div>
+</div>
