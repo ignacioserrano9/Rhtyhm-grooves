@@ -59,14 +59,13 @@ router.get("/record/:id", (req, res) => {
 
 module.exports = router
 
-/* 
 
-<<<<<<< HEAD
+
 
 
 // --- COLLECTION ---
 
-router.get('/user/_id/collection', (req, res) => res.render('../views/user/collection.hbs'))
+//router.get('/user/_id/collection', (req, res) => res.render('../views/user/collection.hbs'))
 
 //router.post('/users/{username}/collection', (req,res) )
 
@@ -82,13 +81,10 @@ router.get('/user/_id/collection', (req, res) => res.render('../views/user/colle
 
 // --- WISHLIST ---
 
-router.get('/user/_id/wishlist', (req, res) => res.render('../views/user/wishlist.hbs'))
+// router.get('/user/_id/wishlist', (req, res) => res.render('../views/user/wishlist.hbs'))
 
 
 
 
 
-module.exports = router
-=======
-*/
->>>>>>> c5bc1909d6a1debcb158f4d380a60de9f9513761
+// module.exports = router
