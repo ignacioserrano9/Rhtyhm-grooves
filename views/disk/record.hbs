@@ -1,0 +1,45 @@
+<h1>{{title}}</h1>
+
+<div class="container ">
+
+    <div class="row">
+
+        <div class="col-4">
+            <article class="artist-container">
+                <img src="{{images.0.resource_url}}" alt="Album photo">
+
+            </article>
+
+        </div>
+        <div class="col-4">
+            <article>
+                <p>Title: {{title}}</p>
+                <p>Artist:{{#each artists}} {{name}} {{/each}}</p>
+                <p>Genres:{{#each genres}} {{this}} {{/each}}</p>
+                <p>Released: {{released_formatted}}</p>
+                <p>Labels: {{#each labels}} | {{name}} | {{/each}}</p>
+                <p>Country: {{country}}</p>
+                <p>Formats: {{#each formats}} {{name}} {{/each}}</p>
+            </article>
+        </div>
+        <div class="col-4">
+            <article>
+                <p>Notes: {{notes}}</p>
+
+            </article>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 align-self-center">
+            <h3>Track List</h3>
+            {{#each tracklist}}
+
+            <p>{{title}} {{duration}}</p>
+            {{/each}}
+        </div>
+    </div>
+    <button href="/record/addcollection/{{this.id}}" type="button" class="btn btn-primary">Add to Collection</button>
+    <button type="button" class="btn btn-primary">Add to Wishlist</button>
+</div>
