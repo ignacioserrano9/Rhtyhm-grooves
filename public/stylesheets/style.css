@@ -15,14 +15,13 @@ h1, h2, h3 {
   padding: 10px 0;
   margin-top: 5px; }
 
-<<<<<<< HEAD
 .button-collection {
   margin-top: 10px;
   background-color: white;
   padding: 10px 35px;
   border-radius: 50px;
   color: #00B7FF; }
-=======
+
 img {
   width: 300px; }
 
@@ -59,6 +58,5 @@ h1 {
 .audioTracks {
   display: flex;
   justify-content: space-between; }
->>>>>>> c5bc1909d6a1debcb158f4d380a60de9f9513761
 
 /*# sourceMappingURL=style.css.map */
