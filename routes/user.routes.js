@@ -15,7 +15,7 @@ router.get("/record-search", (req, res) => {
 client
   .searchRelease(req.query.record)
   .then((data) => {
-      console.log(data)
+      //console.log(data)
     res.render("disk/search", { data });
     
   })
@@ -39,6 +39,23 @@ router.get("/record/:id", (req, res) => {
     })
   
   })
+  router.get("/record/addcollection/:id", (req, res) => {
+    //console.log(typeof(req.params.id))
+    let releaseId = parseInt(req.params.id)
+   client
+     .getRelease(releaseId)
+     .then((data) => {
+         console.log(data)
+
+       res.redirect("/user/collection", data );
+ 
+     })
+     .catch((error) => {
+       console.warn('Oops, something went wrong!', error)
+     })
+   
+   })
+ 
 
 module.exports = router
 
