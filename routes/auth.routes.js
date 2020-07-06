@@ -4,6 +4,9 @@ const passport = require("passport")
 
 const User = require("../models/user.model")
 
+const ensureLogin = require("connect-ensure-login");
+
+
 const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
@@ -39,11 +42,23 @@ router.post("/signup", (req, res, next) => {
 // User login
 router.get('/login', (req, res) => res.render('auth/login', { "errorMsg": req.flash("error") }))
 router.post('/login', passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/profile",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true,
     badRequestMessage: 'Rellena todos los campos'
+}))
+
+// User profile
+
+router.get('/profile', ensureLogin.ensureLoggedIn(), (req, res) => res.render('user/profile', { user: req.user }))
+console.log(User)
+router.post('/profile', passport.authenticate("local", {
+    successRedirect: "/profile",
+    failureRedirect: "/login",
+    failureFlash: true,
+    passReqToCallback: true,
+    badRequestMessage: 'Inicia Sesion o Registrate'
 }))
 
 
