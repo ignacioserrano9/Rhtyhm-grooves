@@ -24,10 +24,11 @@
         </div>
         <div class="col-4">
             <article>
-                    <button href="/record/addcollection/{{this.id}}" type="button" class="btn btn-primary">Add to Collection</button>
-                    <button type="button" class="btn btn-primary">Add to Wishlist</button>
-                    <br><br>
-                    <h3>Track List</h3>
+                <button href="/record/addcollection/{{this.id}}" type="button" class="btn btn-primary">Add to
+                    Collection</button>
+                <button type="button" class="btn btn-primary">Add to Wishlist</button>
+                <br><br>
+                <h3>Track List</h3>
                 {{#each tracklist}}
                 <ul>
                     <li>{{title}} {{duration}}</li>
@@ -45,16 +46,15 @@
             <p>Notes: {{notes}}</p>
         </div>
 
-         <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315"
-src="{{videos.0.uri}}">
-</iframe> 
+        <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315" src="{{videos.0.uri}}">
+        </iframe>
     </div>
 
-    <form  action="/record/addcollection" method="post">
+    <form action="/record/addcollection" method="post">
 
         <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
 
-        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
+        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
 
         <input class="invForm" type="text" id="title" name='title' value="{{title}}">
 
@@ -62,11 +62,11 @@ src="{{videos.0.uri}}">
 
     </form>
 
-    <form  action="/record/addwishlist" method="post">
+    <form action="/record/addwishlist" method="post">
 
         <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
 
-        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
+        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
 
         <input class="invForm" type="text" id="title" name='title' value="{{title}}">
 
@@ -88,10 +88,11 @@ src="{{videos.0.uri}}">
 
 
 <script>
-    function myFunction()
-        var str = document.getElementById("ytVideo").src;
-        var res = str.split("=");
-        var embeddedUrl = "https://www.youtube.com/embed/"+res[1];
-        document.getElementById("ytVideo").src = res;
+    window.addEventListener('load', myFunction(){
+    var str = document.getElementById("ytVideo").src
+    var res = str.split("=")
+    var embeddedUrl = "https://www.youtube.com/embed/" + res[1]
+    document.getElementById("ytVideo").src = res
     }
+
 </script>

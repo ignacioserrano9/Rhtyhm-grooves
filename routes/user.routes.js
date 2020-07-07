@@ -9,6 +9,7 @@ const ensureLogin = require("connect-ensure-login");
 
 
 const Discojs = require('discojs')
+const { populate } = require('../models/disk.model')
 const client = new Discojs({
   consumerKey: process.env.USER_KEY,
   consumerSecret: process.env.USER_SECRET
@@ -87,32 +88,30 @@ router.post("/record/addcollection",ensureLogin.ensureLoggedIn(),(req, res) => {
 // --- COLLECTION ---
 
 router.get('/user/:_id/collection', ensureLogin.ensureLoggedIn(), (req, res) => {
-  User
-    .findOne(req.params.id)
-    .then((data) => {
-      //console.log(data)
-      res.render('user/collection', data)
-
-    })
-    .catch((error) => {
-      console.warn('Oops, something went wrong!', error)
-    })
+  
+  const userId = User.findById(req.user._id)
+  const diskInfo = Disk.find({recordOwner: req.user._id})
+  
+  Promise.all([userId, diskInfo]) 
+  .then(records => {
+    console.log( records)
+      res.render('user/collection', { user: records[0], disk: records[1] }) 
+  })
+  .catch(err => console.log("Error en la BBDD", err))
 })
-
 
 // --- Wishlist---
 
 router.get('/user/:_id/wishlist', ensureLogin.ensureLoggedIn(), (req, res) => {
-User
-    .findOne(req.params.id)
-    .then((data) => {
-      //console.log(data)
-      res.render('user/wishlist', data)
-
-    })
-    .catch((error) => {
-      console.warn('Oops, something went wrong!', error)
-    })
+  const userId = User.findById(req.user._id)
+  const diskInfo = Disk.find({wishlistOwner: req.user._id})
+  
+  Promise.all([userId, diskInfo]) 
+  .then(records => {
+    console.log( records)
+      res.render('user/wishlist', { user: records[0], disk: records[1] }) 
+  })
+  .catch(err => console.log("Error en la BBDD", err))
 })
 
 module.exports = router
