@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require("mongoose")
 const router = express.Router()
 const Disk = require('../models/disk.model')
 const User = require('../models/user.model')
@@ -13,6 +14,11 @@ const client = new Discojs({
   consumerSecret: process.env.USER_SECRET
 
 })
+
+
+
+
+
 //Record search
 
 router.get("/record-search", (req, res) => {
@@ -33,45 +39,36 @@ router.get("/record-search", (req, res) => {
 })
 
 //Record view
-router.get("/record/:id", (req, res) => {
+router.get("/record/:id",ensureLogin.ensureLoggedIn(), (req, res) => {
   //console.log(typeof(req.params.id))
   let releaseId = parseInt(req.params.id)
   client
     .getRelease(releaseId)
     .then((data) => {
-      //console.log(data)
-      res.render("disk/record", data);
-
+     // console.log(data)
+      res.render("disk/record", data)
+      //console.log(user)
     })
     .catch((error) => {
       console.warn('Oops, something went wrong!', error)
     })
 
 })
-router.post("/record/addcollection/:id", (req, res) => {
-  let releaseId = parseInt(req.params.id)
-  let userdata = User.findById(req.params.id)
-  let record = client.getRelease(releaseId)
-  //console.log(typeof(req.params.id))
-  Promise.all([userdata, record])
-  
-  .then(data => {
-  console.log(data[1])
-  Disk.insertOne({record: data[1]})
 
+
+router.post("/record/addcollection",ensureLogin.ensureLoggedIn(),(req, res) => {
+  
+  const { DiscId, image, title } = req.body
+  const recordOwner = req.user._id
+  Disk
+  .create({ DiscId, image, title, recordOwner })
+  .then(() => res.redirect('/profile'))
   .catch((error) => {
     console.warn('Oops, something went wrong!', error)
+  
   })
-.then(data=> {
-  User.findOneAndUpdate({record: data[1].id}, {record: data[2].id} )
+  })
 
-})
-res.redirect("/user/collection", data);
-})
-})
-
-
-    
 
 
 
@@ -91,7 +88,7 @@ router.get('/user/:_id/collection', ensureLogin.ensureLoggedIn(), (req, res) => 
 })
 
 
-
+// --- Wishlist---
 
 router.get('/user/:_id/wishlist', ensureLogin.ensureLoggedIn(), (req, res) => {
 User

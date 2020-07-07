@@ -40,6 +40,27 @@
             {{/each}}
         </div>
     </div>
-    <button href="/record/addcollection/{{this.id}}" type="button" class="btn btn-primary">Add to Collection</button>
-    <button type="button" class="btn btn-primary">Add to Wishlist</button>
+
+    <form  action="/record/addcollection" method="post">
+
+        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+
+        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
+
+        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+        <a href='#'><button type="submit" class="btn btn-dark">Add to Collection</button></a>
+
+    </form>
+
+
+
+
+
+
+
+
+    {{!-- <button href="/record/addcollection/{{id}}" type="button" class="btn btn-primary">Add to Collection</button>
+    <a href="/addcollection/{{id}}">Add recor to collection</a>
+    <button type="button" class="btn btn-primary">Add to Wishlist</button> --}}
 </div>

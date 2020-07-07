@@ -18,8 +18,7 @@ const userSchema = new mongoose.Schema({
         enum: ['ADMIN', 'USER'],
         default: 'USER'
     },
-    records: [{type: Schema.Types.ObjectId, ref: 'Disk'}],
-    wishlist: [{type: Schema.Types.ObjectId, ref: 'Disk'}],
+    
     
 }, {
     timestamps: true
