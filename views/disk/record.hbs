@@ -12,7 +12,7 @@
 
         </div>
         <div class="col-4">
-            <article>
+            <article class='description'>
                 <p>Title: {{title}}</p>
                 <p>Artist:{{#each artists}} {{name}} {{/each}}</p>
                 <p>Genres:{{#each genres}} {{this}} {{/each}}</p>
@@ -24,15 +24,38 @@
         </div>
         <div class="col-4">
             <article>
-                    <button href="/record/addcollection/{{this.id}}" type="button" class="btn btn-primary">Add to Collection</button>
-                    <button type="button" class="btn btn-primary">Add to Wishlist</button>
-                    <br><br>
-                    <h3>Track List</h3>
+                <div class="btn-add">
+
+                    <form action="/record/addcollection" method="post">
+
+                        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+
+                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
+
+                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+                        <a href='#'><button type="submit" class="btn btn-primary">Add to Collection</button></a>
+
+                    </form>
+
+                    <form action="/record/addwishlist" method="post">
+
+                        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+
+                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
+
+                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+                        <a href='#'><button type="submit" class="btn btn-primary">Add to Wishlist</button></a>
+
+                    </form>
+                </div>
+                <br><br>
+                <h3>Track List</h3>
                 {{#each tracklist}}
-                <ul>
+                <ul class='description-tracklist'>
                     <li>{{title}} {{duration}}</li>
                 </ul>
-                {{!-- <p>{{title}} {{duration}}</p> --}}
                 {{/each}}
             </article>
 
@@ -44,54 +67,51 @@
             <br><br>
             <p>Notes: {{notes}}</p>
         </div>
-
-         <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315"
-src="{{videos.0.uri}}">
-</iframe> 
+    </div>
+    <div>
+        <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315" src="{{videos.0.uri}}">
+        </iframe>
     </div>
 
-    <form  action="/record/addcollection" method="post">
-
-        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
-
-        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
-
-        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-
-        <a href='#'><button type="submit" class="btn btn-dark">Add to Collection</button></a>
-
-    </form>
-
-    <form  action="/record/addwishlist" method="post">
-
-        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
-
-        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
-
-        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-
-        <a href='#'><button type="submit" class="btn btn-dark">Add to Wishlist</button></a>
-
-    </form>
-
-
-
-
-
-
-
-
-    {{!-- <button href="/record/addcollection/{{id}}" type="button" class="btn btn-primary">Add to Collection</button>
-    <a href="/addcollection/{{id}}">Add recor to collection</a>
-    <button type="button" class="btn btn-primary">Add to Wishlist</button> --}}
 </div>
 
-
+ 
 <script>
     function myFunction()
-        var str = document.getElementById("ytVideo").src;
-        var res = str.split("=");
-        var embeddedUrl = "https://www.youtube.com/embed/"+res[1];
-        document.getElementById("ytVideo").src = res;
+    var str = document.getElementById("ytVideo").src;
+    var res = str.split("=");
+    var embeddedUrl = "https://www.youtube.com/embed/" + res[1];
+    document.getElementById("ytVideo").src = res;
     }
+</script> 
+
+{{!-- <div>
+    <iframe id="myFrame" style="width: 600px ; height: 350px" src="iframeVideo.html" frameborder="1"
+        allowfullscreen=""></iframe>
+</div>
+<div id="video"></div>
+
+<script>
+    var container = document.getElementById("video");
+    var frame = document.createElement("iframe");
+    frame.style.width = "600px";
+    frame.style.height = "400px";
+
+    frame.onload = function () {
+        if (frame.contentDocument) {
+            var fdoc = frame.contentDocument;
+            var vframe = fdoc.createElement("iframe");
+
+            vframe.src = "https://www.youtube.com/embed/NEIwl93Yr8o";
+            vframe.setAttribute("frameborder", "0");
+            vframe.setAttribute("allowfullscreen", "");
+            vframe.style.width = "500px";
+            vframe.style.height = "281px";
+
+            fdoc.body.appendChild(vframe);
+        }
+    }
+    container.appendChild(frame);
 </script>
+
+</html> --}}

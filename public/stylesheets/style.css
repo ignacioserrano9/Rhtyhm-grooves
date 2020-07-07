@@ -54,6 +54,11 @@ h3 {
   background-color: #6c757d;
   border-color: #6c757d; }
 
+.btn-add {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px; }
+
 img {
   width: 300px; }
 
@@ -104,6 +109,12 @@ img {
 .record-title {
   font-size: 3.5em;
   margin-bottom: 50px; }
+
+.description {
+  font-size: 1.3em; }
+
+.description-tracklist {
+  font-size: 1.2em; }
 
 h1 {
   text-align: center;
