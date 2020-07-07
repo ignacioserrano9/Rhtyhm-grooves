@@ -53,6 +53,18 @@
 
     </form>
 
+    <form  action="/record/addwishlist" method="post">
+
+        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+
+        <input  class="invForm" type="text"  id="image" name='image' value="{{images.0.resource_url}}">
+
+        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+        <a href='#'><button type="submit" class="btn btn-dark">Add to Wishlist</button></a>
+
+    </form>
+
 
 
 

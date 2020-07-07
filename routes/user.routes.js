@@ -62,14 +62,25 @@ router.post("/record/addcollection",ensureLogin.ensureLoggedIn(),(req, res) => {
   const recordOwner = req.user._id
   Disk
   .create({ DiscId, image, title, recordOwner })
-  .then(() => res.redirect('/profile'))
+  .then(() => res.redirect('/user/:_id/collection'))
   .catch((error) => {
     console.warn('Oops, something went wrong!', error)
   
   })
+})
+
+  router.post("/record/addwishlist",ensureLogin.ensureLoggedIn(),(req, res) => {
+  
+    const { DiscId, image, title } = req.body
+    const wishlistOwner = req.user._id
+    Disk
+    .create({ DiscId, image, title, wishlistOwner })
+    .then(() => res.redirect('/user/:_id/collection'))
+    .catch((error) => {
+      console.warn('Oops, something went wrong!', error)
+    
+    })
   })
-
-
 
 
 // --- COLLECTION ---
