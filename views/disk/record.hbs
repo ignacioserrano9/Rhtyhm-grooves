@@ -32,13 +32,17 @@
 
     </div>
     <div class="row">
-        <div class="col-6 align-self-center">
+        <div class="col-3 align-self-center">
             <h3>Track List</h3>
             {{#each tracklist}}
 
             <p>{{title}} {{duration}}</p>
             {{/each}}
         </div>
+
+         <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315"
+src="{{videos.0.uri}}">
+</iframe> 
     </div>
 
     <form  action="/record/addcollection" method="post">
@@ -76,3 +80,13 @@
     <a href="/addcollection/{{id}}">Add recor to collection</a>
     <button type="button" class="btn btn-primary">Add to Wishlist</button> --}}
 </div>
+
+
+<script>
+    function myFunction()
+        var str = document.getElementById("ytVideo").src;
+        var res = str.split("=");
+        var embeddedUrl = "https://www.youtube.com/embed/"+res[1];
+        document.getElementById("ytVideo").src = res;
+    }
+</script>

@@ -45,7 +45,7 @@ router.get("/record/:id",ensureLogin.ensureLoggedIn(), (req, res) => {
   client
     .getRelease(releaseId)
     .then((data) => {
-     // console.log(data)
+      console.log(data)
       res.render("disk/record", data)
       //console.log(user)
     })
@@ -75,7 +75,7 @@ router.post("/record/addcollection",ensureLogin.ensureLoggedIn(),(req, res) => {
     const wishlistOwner = req.user._id
     Disk
     .create({ DiscId, image, title, wishlistOwner })
-    .then(() => res.redirect('/user/:_id/collection'))
+    .then(() => res.redirect('/user/:_id/wishlist'))
     .catch((error) => {
       console.warn('Oops, something went wrong!', error)
     
