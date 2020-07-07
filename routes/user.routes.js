@@ -57,7 +57,7 @@ router.get("/record/:id", (req, res) => {
    })
  
 
-module.exports = router
+//module.exports = router
 
 
 
@@ -65,7 +65,7 @@ module.exports = router
 
 // --- COLLECTION ---
 
-//router.get('/user/_id/collection', (req, res) => res.render('../views/user/collection.hbs'))
+router.get('/user/_id/collection', (req, res) => res.render('../views/user/collection.hbs'))
 
 //router.post('/users/{username}/collection', (req,res) )
 
@@ -81,10 +81,10 @@ module.exports = router
 
 // --- WISHLIST ---
 
-// router.get('/user/_id/wishlist', (req, res) => res.render('../views/user/wishlist.hbs'))
+router.get('/user/_id/wishlist', (req, res) => res.render('../views/user/wishlist.hbs'))
 
 
 
 
 
-// module.exports = router
+module.exports = router
