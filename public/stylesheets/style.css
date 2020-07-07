@@ -1,7 +1,9 @@
 body {
   font-weight: 200; }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 200; }
 
 .navbar {
@@ -99,9 +101,17 @@ img {
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
 
+.record-title {
+  font-size: 3.5em;
+  margin-bottom: 50px; }
+
 h1 {
   text-align: center;
   margin-bottom: 20px; }
+
+h3 {
+  text-align: center;
+  margin-bottom: 15px; }
 
 .audioTracks {
   display: flex;
