@@ -1,6 +1,6 @@
 
 
-<main class='index'>
+{{!-- <main class='index'>
     <div class='container-fluid'>
         <div class='row'>
 
@@ -13,9 +13,23 @@
                 <a href='/user/{{user._id}}/collection'><button class='button-collection'>Ver Coleccion!</button></a>
                 <a href='/user/{{user._id}}/wishlist'><button class='button-collection'>Ver Lista Deseados!</button></a>
 
+                </p>
+
             </div>
 
         </div>
     </div>
 
+</main> --}}
+
+<main>
+<section class='jumbotron text-center'>
+    <div class='container'>
+        <h1>{{user.username}} Perfil</h1>
+        <p>
+            <a href='/user/_id/collection'><button class='button-collection btn-primary'>Ver Coleccion!</button></a>
+            <a href='/user/_id/wishlist'><button class='button-collection btn-secondary'>Ver Lista Deseados!</button></a>
+        </p>
+    </div>
+</section>
 </main>

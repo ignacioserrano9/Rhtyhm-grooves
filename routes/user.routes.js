@@ -54,6 +54,7 @@ router.get("/record/:id",ensureLogin.ensureLoggedIn(), (req, res) => {
     })
 
 })
+//module.exports = router
 
 
 router.post("/record/addcollection",ensureLogin.ensureLoggedIn(),(req, res) => {

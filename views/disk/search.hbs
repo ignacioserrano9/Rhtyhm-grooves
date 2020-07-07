@@ -1,17 +1,37 @@
+<h1>Records found</h1>
 
 <div class="container justify-content-center">
-<h1>Records found</h1>
     <div class="row">
         {{#each data.results}}
-        <div class="col-4">
-            <article class="artist-container">
+        <div class="col-md-4">
+            {{!-- <article class="artist-container">
                 <img src="{{this.cover_image}}" alt="Photo">
               <a href="/record/{{this.id}}" >{{this.title}}</a>
 
                 
-            </article>
+            </article> --}}
+            <div class="card artist-container shadow-sm" style="width: 18rem;">
+                <img src="{{this.cover_image}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    {{!-- <p class="card-text">{{this.title}}</p> --}}
+                    <a href="/record/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
+                </div>
+            </div>
         </div>
 
         {{/each}}
     </div>
 </div>
+
+
+
+{{!-- <div class="card artist-container" style="width: 18rem;">
+    <img src="{{this.cover_image}}" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="/record/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
+    </div>
+</div> --}}
