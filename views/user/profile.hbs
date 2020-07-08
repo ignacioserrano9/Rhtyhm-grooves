@@ -3,11 +3,22 @@
 <main>
 <section class='jumbotron text-center'>
     <div class='container'>
-        <h1>{{user.username}} Perfil</h1>
+        <div class='row justify-content-around'>
+        <div class="col-md-4">
+        <img src="/images/avatar.png" alt="Profile Picture">
+        </div>
+
+        <div class="col-md-6">
+        <h1 class='profile'>{{user.username}} Perfil</h1>
+        <a href='/user/{{user._id}}/edit'><button class='button-collection btn-primary'>Editar Perfil</button></a>
+
+        
         <p>
             <a href='/user/{{user._id}}/collection'><button class='button-collection btn-primary'>Ver Coleccion!</button></a>
             <a href='/user/{{user._id}}/wishlist'><button class='button-collection btn-secondary'>Ver Lista Deseados!</button></a>
         </p>
+        
+        </div>
     </div>
 </section>
 </main>

@@ -1,11 +1,20 @@
 <main class='jumbotron'>
-<h1>Vista comunidad</h1>
+<h1>Comunidad</h1>
 
+<div class="container justify-content-center">
+    <div class="row">
+    {{#each users}}
+    <div class="col-md-4">
 
-{{#each users}}
-<a href="/community/{{_id}}">{{username}}</a>
+    <div class="card artist-container shadow-sm" style="width: 18rem;">
+    <img src="{{avatar}}" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
 
-
+        <a href="/community/{{_id}}">{{username}}</a>
+    </div>
+    </div>
+</div>
 
 {{/each}}
 
