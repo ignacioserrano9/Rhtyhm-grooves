@@ -1,20 +1,22 @@
-
-<main>
 <section class='jumbotron text-center'>
     <div class='container'>
-        <h1>Welcome to {{this.username}} profile</h1>
-        
+        <h1>Welcome to {{user.username}} profile</h1>
+
         <p>Collection</p>
-{{#each disk}}
-        
+        {{#each vynil}}
+
         {{title}}
 
-        
+
         <img src="{{image}}" alt="">
-        
-        
-        
-    
+        {{/each}}
+        <p>Wishlist</p>
+        {{#each wish}}
+
+        {{title}}
+
+
+        <img src="{{image}}" alt="">
+        {{/each}}
     </div>
 </section>
-</main>
