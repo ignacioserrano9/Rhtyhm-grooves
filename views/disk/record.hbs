@@ -1,3 +1,4 @@
+<main class='jumbotron'>
 <h1 class='record-title'><strong>{{title}}</strong></h1>
 
 <div class="container ">
@@ -68,45 +69,29 @@
             <p>Notes: {{notes}}</p>
         </div>
     </div>
-    <div>
-        <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315" src="{{videos.0.uri}}">
-        </iframe>
-    </div>
 
 </div>
 
- 
-<script>
-    function myFunction()
-    var str = document.getElementById("ytVideo").src;
-    var res = str.split("=");
-    var embeddedUrl = "https://www.youtube.com/embed/" + res[1];
-    document.getElementById("ytVideo").src = res;
-    }
-</script> 
 
-{{!-- <div>
-    <iframe id="myFrame" style="width: 600px ; height: 350px" src="iframeVideo.html" frameborder="1"
-        allowfullscreen=""></iframe>
-</div>
+
 <div id="video"></div>
 
 <script>
-    var container = document.getElementById("video");
-    var frame = document.createElement("iframe");
+    let container = document.getElementById("video");
+    let frame = document.createElement("iframe");
     frame.style.width = "600px";
     frame.style.height = "400px";
 
     frame.onload = function () {
         if (frame.contentDocument) {
-            var fdoc = frame.contentDocument;
-            var vframe = fdoc.createElement("iframe");
+            let fdoc = frame.contentDocument;
+            let vframe = fdoc.createElement("iframe");
 
-            vframe.src = "https://www.youtube.com/embed/NEIwl93Yr8o";
+            vframe.src = "https://www.youtube.com/embed/";
             vframe.setAttribute("frameborder", "0");
             vframe.setAttribute("allowfullscreen", "");
-            vframe.style.width = "500px";
-            vframe.style.height = "281px";
+            vframe.style.width = "600px";
+            vframe.style.height = "400px";
 
             fdoc.body.appendChild(vframe);
         }
@@ -114,4 +99,6 @@
     container.appendChild(frame);
 </script>
 
-</html> --}}
+</html>
+
+</main>
