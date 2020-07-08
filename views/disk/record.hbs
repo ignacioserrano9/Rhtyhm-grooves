@@ -87,7 +87,7 @@
             let fdoc = frame.contentDocument;
             let vframe = fdoc.createElement("iframe");
 
-            vframe.src = "https://www.youtube.com/embed/";
+            vframe.src = "https://www.youtube.com/embed/{{";
             vframe.setAttribute("frameborder", "0");
             vframe.setAttribute("allowfullscreen", "");
             vframe.style.width = "600px";
@@ -99,6 +99,3 @@
     container.appendChild(frame);
 </script>
 
-</html>
-
-</main>
