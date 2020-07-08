@@ -68,27 +68,11 @@
             <p>Notes: {{notes}}</p>
         </div>
     </div>
-    <div>
-        <iframe class="col-3 align-self-center " id="ytVideo" width="420" height="315" src="{{videos.0.uri}}">
-        </iframe>
-    </div>
 
 </div>
 
- 
-<script>
-    function myFunction()
-    var str = document.getElementById("ytVideo").src;
-    var res = str.split("=");
-    var embeddedUrl = "https://www.youtube.com/embed/" + res[1];
-    document.getElementById("ytVideo").src = res;
-    }
-</script> 
 
-{{!-- <div>
-    <iframe id="myFrame" style="width: 600px ; height: 350px" src="iframeVideo.html" frameborder="1"
-        allowfullscreen=""></iframe>
-</div>
+
 <div id="video"></div>
 
 <script>
@@ -105,8 +89,8 @@
             vframe.src = "https://www.youtube.com/embed/NEIwl93Yr8o";
             vframe.setAttribute("frameborder", "0");
             vframe.setAttribute("allowfullscreen", "");
-            vframe.style.width = "500px";
-            vframe.style.height = "281px";
+            vframe.style.width = "600px";
+            vframe.style.height = "400px";
 
             fdoc.body.appendChild(vframe);
         }
@@ -114,4 +98,4 @@
     container.appendChild(frame);
 </script>
 
-</html> --}}
+</html>
