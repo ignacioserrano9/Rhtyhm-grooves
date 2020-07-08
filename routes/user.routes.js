@@ -46,7 +46,7 @@ router.get("/record/:id",ensureLogin.ensureLoggedIn(), (req, res) => {
   client
     .getRelease(releaseId)
     .then((data) => {
-      console.log(data)
+     // console.log(data)
       res.render("disk/record", data)
       //console.log(user)
     })
@@ -94,7 +94,7 @@ router.get('/user/:_id/collection', ensureLogin.ensureLoggedIn(), (req, res) => 
   
   Promise.all([userId, diskInfo]) 
   .then(records => {
-    console.log( records)
+    //console.log( records)
       res.render('user/collection', { user: records[0], disk: records[1] }) 
   })
   .catch(err => console.log("Error en la BBDD", err))
@@ -108,7 +108,7 @@ router.get('/user/:_id/wishlist', ensureLogin.ensureLoggedIn(), (req, res) => {
   
   Promise.all([userId, diskInfo]) 
   .then(records => {
-    console.log( records)
+    //console.log( records)
       res.render('user/wishlist', { user: records[0], disk: records[1] }) 
   })
   .catch(err => console.log("Error en la BBDD", err))
@@ -131,4 +131,28 @@ router.get('/profile/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
 })
 
 
+//comunity
+router.get('/community', ensureLogin.ensureLoggedIn(), (req, res) => {
+
+  User
+  .find()
+  .then(users => {
+    console.log(users)
+    res.render("user/community", {users})
+  }) 
+  .catch(err => console.log("Error en la BBDD", err))
+  })
+
+router.get('/community/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
+  
+  const userId =  User.findById(req.params.id)
+  const diskInfo = Disk.find({wishlistOwner:req.params.id })
+
+        Promise.all([userId, diskInfo]) 
+        .then(records => {
+          //console.log( records)
+            res.render('user/wishlist', { user: records[0], disk: records[1] }) 
+        })
+        .catch(err => console.log("Error en la BBDD", err))
+      })
 module.exports = router
