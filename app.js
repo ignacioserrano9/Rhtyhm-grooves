@@ -21,5 +21,7 @@ require('./configs/locals.config')(app)
 // Routes index
 require('./routes')(app)
 
+var hbs = require('hbs');
+hbs.registerPartials(__dirname + "/views/partials")
 
 module.exports = app
