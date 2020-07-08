@@ -1,12 +1,19 @@
 <main>
-
-    <section class='jumbotron text center'>
-        <div class='container'>
-            <h1>{{user.username}} Wishlist </h1>
+    <h1>{{user.username}} Wishlist </h1>
+    <section class="container justify-content-center">
+        <div class='row'>
             {{#each disk}}
-            <img src="{{image}}" alt="album cover">
-            <p>{{title}}</p>
-            <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+            <div class="col-md-4">
+
+                <div class="card artist-container shadow-sm" style="width: 18rem;">
+                    <img src="{{image}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+
+                        <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
             {{/each}}
         </div>
     </section>
