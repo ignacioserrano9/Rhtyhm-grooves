@@ -76,17 +76,17 @@
 <div id="video"></div>
 
 <script>
-    var container = document.getElementById("video");
-    var frame = document.createElement("iframe");
+    let container = document.getElementById("video");
+    let frame = document.createElement("iframe");
     frame.style.width = "600px";
     frame.style.height = "400px";
 
     frame.onload = function () {
         if (frame.contentDocument) {
-            var fdoc = frame.contentDocument;
-            var vframe = fdoc.createElement("iframe");
+            let fdoc = frame.contentDocument;
+            let vframe = fdoc.createElement("iframe");
 
-            vframe.src = "https://www.youtube.com/embed/NEIwl93Yr8o";
+            vframe.src = "https://www.youtube.com/embed/{{";
             vframe.setAttribute("frameborder", "0");
             vframe.setAttribute("allowfullscreen", "");
             vframe.style.width = "600px";

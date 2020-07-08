@@ -1,22 +1,37 @@
-<section class='jumbotron text-center'>
+no<section class='jumbotron text-center'>
     <div class='container'>
         <h1>Welcome to {{user.username}} profile</h1>
-
-        <p>Collection</p>
+        <div class='row'>
+        <div class="col-md-6">
+        <h3>Collection</h3>
         {{#each vynil}}
 
-        {{title}}
-
-
-        <img src="{{image}}" alt="">
+        <div class="card artist-container shadow-sm" style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+        
+                <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+            </div>
+        </div>
         {{/each}}
-        <p>Wishlist</p>
+        </div>
+
+        <div class="col-md-4">
+        <h3>Wishlist</h3>
         {{#each wish}}
-
-        {{title}}
-
-
-        <img src="{{image}}" alt="">
+       
+        <div class="card artist-container shadow-sm" style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+        
+                <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+            </div>
+        </div>
+        
         {{/each}}
+        </div>
+        </div>
     </div>
 </section>
