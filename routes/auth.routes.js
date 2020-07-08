@@ -71,7 +71,7 @@ router.get('/profile', ensureLogin.ensureLoggedIn(), (req, res) => {
     User
         .findOne(req.params.id)
         .then((data) => {
-            console.log("ddddddd",data)
+            //console.log("ddddddd",data)
             res.render('user/profile', {
                 user: req.user
             })

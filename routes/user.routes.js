@@ -114,4 +114,21 @@ router.get('/user/:_id/wishlist', ensureLogin.ensureLoggedIn(), (req, res) => {
   .catch(err => console.log("Error en la BBDD", err))
 })
 
+
+router.get('/profile/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
+  User
+      .findOne(req.params.id)
+      .then((data) => {
+          //console.log("ddddddd",data)
+          res.render('user/profile', {
+              user: req.user
+          })
+
+      })
+      .catch((error) => {
+          console.warn('Oops, something went wrong!', error)
+      })
+})
+
+
 module.exports = router
