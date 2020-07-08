@@ -28,7 +28,7 @@
 
                     <form action="/record/addcollection" method="post">
 
-                        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
 
                         <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
 
@@ -40,7 +40,7 @@
 
                     <form action="/record/addwishlist" method="post">
 
-                        <input class="invForm" type="number" id="DiscId" name='DiscId' value="{{id}}">
+                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
 
                         <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
 
@@ -71,31 +71,3 @@
 
 </div>
 
-
-
-<div id="video"></div>
-
-<script>
-    let container = document.getElementById("video");
-    let frame = document.createElement("iframe");
-    frame.style.width = "600px";
-    frame.style.height = "400px";
-
-    frame.onload = function () {
-        if (frame.contentDocument) {
-            let fdoc = frame.contentDocument;
-            let vframe = fdoc.createElement("iframe");
-
-            vframe.src = "https://www.youtube.com/embed/{{";
-            vframe.setAttribute("frameborder", "0");
-            vframe.setAttribute("allowfullscreen", "");
-            vframe.style.width = "600px";
-            vframe.style.height = "400px";
-
-            fdoc.body.appendChild(vframe);
-        }
-    }
-    container.appendChild(frame);
-</script>
-
-</html>

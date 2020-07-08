@@ -36,10 +36,10 @@ router.post("/record/addcollection", ensureLogin.ensureLoggedIn(), (req, res, ne
 })
 
 router.post("/record/addwishlist", ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  const { DiscId, image, title } = req.body
+  const { discId, image, title } = req.body
   const wishlistOwner = req.user._id
   Disk
-    .create({ DiscId, image, title, wishlistOwner })
+    .create({ discId, image, title, wishlistOwner })
     .then(() => res.redirect('/user/:_id/wishlist'))
     .catch(err => next(new Error(err)))
 })
