@@ -1,37 +1,37 @@
-no<section class='jumbotron text-center'>
+<section class='jumbotron text-center'>
     <div class='container'>
         <h1>Welcome to {{user.username}} profile</h1>
-        <div class='row'>
-        <div class="col-md-6">
-        <h3>Collection</h3>
-        {{#each vynil}}
+        <div class='row justify-content-around'>
+            <div class="col-md-4">
+                <h3>Collection</h3>
+                {{#each vynil}}
 
-        <div class="card artist-container shadow-sm" style="width: 18rem;">
-            <img src="{{image}}" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-        
-                <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
-            </div>
-        </div>
-        {{/each}}
-        </div>
+                <div class="card artist-container shadow-sm" style="width: 18rem;">
+                    <img src="{{image}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
 
-        <div class="col-md-4">
-        <h3>Wishlist</h3>
-        {{#each wish}}
-       
-        <div class="card artist-container shadow-sm" style="width: 18rem;">
-            <img src="{{image}}" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">{{title}}</h5>
-        
-                <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+                        <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+                {{/each}}
             </div>
-        </div>
-        
-        {{/each}}
-        </div>
+
+            <div class="col-md-4">
+                <h3>Wishlist</h3>
+                {{#each wish}}
+
+                <div class="card artist-container shadow-sm" style="width: 18rem;">
+                    <img src="{{image}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+
+                        <a href="/record/{{DiscId}}" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+
+                {{/each}}
+            </div>
         </div>
     </div>
 </section>

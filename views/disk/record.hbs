@@ -1,3 +1,4 @@
+<main class='jumbotron'>
 <h1 class='record-title'><strong>{{title}}</strong></h1>
 
 <div class="container ">
@@ -86,7 +87,7 @@
             let fdoc = frame.contentDocument;
             let vframe = fdoc.createElement("iframe");
 
-            vframe.src = "https://www.youtube.com/embed/{{";
+            vframe.src = "https://www.youtube.com/embed/";
             vframe.setAttribute("frameborder", "0");
             vframe.setAttribute("allowfullscreen", "");
             vframe.style.width = "600px";
@@ -99,3 +100,5 @@
 </script>
 
 </html>
+
+</main>
