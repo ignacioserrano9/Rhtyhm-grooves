@@ -48,11 +48,12 @@
         
 
     <div class="row">
-        <div class="col-12 align-self-center">
+        <div class="col-12 align-self-center justify-content-center">
             <br><br>
             <p>Notes: {{notes}}</p>
         </div>
-        <iframe id="video" width="420" height="315" src="{{videos.0.uri}}"></iframe>
+        <iframe class="col-12 align-self-center justify-content-center" id="video" width="420" height="600" src="{{videos.0.uri}}"></iframe>
+   
     </div>
 
     <script>
@@ -60,4 +61,5 @@
         let res = str.split("=")
         let embeddedUrl = "https://www.youtube.com/embed/" + res[1];
         document.getElementById("video").src = embeddedUrl
+
     </script>
