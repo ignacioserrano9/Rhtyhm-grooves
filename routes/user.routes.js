@@ -36,6 +36,15 @@ router.post("/record/addcollection", ensureLogin.ensureLoggedIn(), (req, res, ne
     .catch(err => next(new Error(err)))
 })
 
+router.post("/record/delete", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  const { id } = req.body
+  console.log(req.body)
+  Disk
+    .deleteOne({ _id: id})
+    .then(() => res.redirect('/user/:_id/collection'))
+    .catch(err => next(new Error(err)))
+})
+
 router.post("/record/addwishlist", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const { discId, image, title } = req.body
   const wishlistOwner = req.user._id

@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const User = require('../models/user.model')
-const Picture = require('../models/picture.model')
 const cloudUploader = require('../configs/cloudinary.config')
 
 router.get('/user/:_id/edit', (req, res, next) => {
