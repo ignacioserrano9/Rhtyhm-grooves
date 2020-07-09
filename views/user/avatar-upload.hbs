@@ -1,7 +1,16 @@
 <section>
     <h2>Editar Perfil</h2>
+    
     <form action="/user/{{_id}}/edit" method="post" enctype="multipart/form-data">
         <input type="file" name="imageFile"><br><br>
-        <input type="submit" value="Subir">
+        <input  type="submit" value="Subir">
+    </form>
+
+    <form action="/editdata/{{_id}}" method="post">
+    <input title="email" type="text" id="email" name='email' value="{{email}}">
+    <input type="text" id="genres" name='genres' value="{{genres}}">
+    <input  type="password" id="password" name='password' placeholder="new password">
+    <input class="btn btn-secondary" type="submit">
+    
     </form>
 </section>
