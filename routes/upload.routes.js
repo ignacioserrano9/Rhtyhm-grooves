@@ -10,19 +10,20 @@ const Picture = require('../models/picture.model')
 
 const cloudUploader = require('../configs/cloudinary.config')
 
-router.get('user/:_id/edit', (req, res, next) => res.render('../views/user/avatar-upload.hbs'))
-
-router.post('user/:_id/edit', cloudUploader.single('imageFile'), (req, res, next) => {
+router.get('/user/:_id/edit', (req, res, next) => {
+    User.findById(req.user.id)
+    .then(user => res.render('user/avatar-upload',user))
+    .catch(err => next(new Error(err)))
+})
+router.post('/user/:_id/edit', cloudUploader.single('imageFile'), (req, res, next) => {
 
     console.log('Multer, en combinación con Cloudinary, crea este req.file:', req.file)
 
-    Picture.create({
-            name: req.body.imageName,
-            path: req.file.url,
-            originalName: req.file.originalname
-        })
-        .then(() => res.redirect('/profile'))
-        .catch(err => next(new Error(err)))
+User.findByIdAndUpdate({_id: req.user.id},{avatar: req.file.path})
+
+    .then(user => res.redirect('/profile'))
+    .catch(err => next(new Error(err)))
+
 })
 
 

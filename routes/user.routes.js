@@ -20,6 +20,7 @@ router.get("/record-search", (req, res, next) => {
 
 router.get("/record/:id", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   let releaseId = parseInt(req.params.id)
+  
   client
     .getRelease(releaseId)
     .then((data) => (res.render("disk/record", data)))

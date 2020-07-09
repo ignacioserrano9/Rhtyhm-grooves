@@ -16,12 +16,13 @@ require('./configs/middleware.config')(app)
 require('./configs/passport.config')(app)
 require('./configs/views.configs')(app)
 require('./configs/locals.config')(app)
-
+//require('./configs/cloudinary.config')(app)
 
 // Routes index
 require('./routes')(app)
 
-var hbs = require('hbs');
+
+let hbs = require('hbs');
 hbs.registerPartials(__dirname + "/views/partials")
 
 module.exports = app
