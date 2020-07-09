@@ -5,18 +5,11 @@
     <div class='container'>
         <div class='row justify-content-around'>
         <div class="col-md-4">
-        <img src="{{user.avatar}}" alt="Profile Picture">
+        <img class='profile-img' src="{{user.avatar}}" alt="Profile Picture">
         </div>
 
-<<<<<<< HEAD
         <div class="col-md-8">
-        <h1 class='profile'>{{user.username}} Perfil</h1>
-=======
-        <div class="col-md-6">
         <h1 class='profile'>Bienvenido {{user.username}} </h1>
-        <a href='/user/{{user._id}}/edit'><button class='button-collection btn-primary'>Editar Perfil</button></a>
->>>>>>> master
-
         
         <p>
             <a href='/user/{{user._id}}/collection'><button class='button-collection btn-primary'>Ver Coleccion!</button></a>

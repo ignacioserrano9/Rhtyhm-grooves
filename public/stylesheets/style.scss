@@ -13,6 +13,10 @@ h3 {
   font-size: 4em,
 }
 
+.profile-img {
+  border-radius: 30px
+}
+
 .navbar {
   margin-bottom: 70px;
 }
@@ -71,6 +75,12 @@ h3 {
   background-color: #007bff;
   border-color: #007bff;
   margin-left: 12px,
+}
+
+.btn-outline-success {
+   color: #fff;
+   background-color: #007bff;
+   border-color: #007bff;
 }
 
 
