@@ -63,19 +63,20 @@ h3 {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+  margin: 15px;
 }
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 12px,
 }
+
 
 .btn-add{
   display: flex;
   justify-content: space-between;
-  margin-left: 15px;
-  
 }
 
 img {
@@ -169,3 +170,6 @@ h3 {
 .invForm{
   display: none;
 }
+
+
+

@@ -8,14 +8,15 @@
         <img src="{{user.avatar}}" alt="Profile Picture">
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-8">
         <h1 class='profile'>{{user.username}} Perfil</h1>
-        <a href='/user/{{user._id}}/edit'><button class='button-collection btn-primary'>Editar Perfil</button></a>
 
         
         <p>
             <a href='/user/{{user._id}}/collection'><button class='button-collection btn-primary'>Ver Coleccion!</button></a>
-            <a href='/user/{{user._id}}/wishlist'><button class='button-collection btn-secondary'>Ver Lista Deseados!</button></a>
+            <a href='/user/{{user._id}}/wishlist'><button class='button-collection btn-primary'>Ver Lista Deseados!</button></a>
+            <a href='/user/{{user._id}}/edit'><button class='button-collection btn-primary'>Editar Perfil</button></a>
+
         </p>
         
         </div>
