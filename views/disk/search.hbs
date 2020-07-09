@@ -1,24 +1,18 @@
 <main class='jumbotron'>
-<h1>Records found</h1>
-
-<div class="container justify-content-center">
-    <div class="row">
-        {{#each data.results}}
-        <div class="col-md-4">
-            
-            <div class="card artist-container shadow-sm" style="width: 18rem;">
-                <img src="{{this.cover_image}}" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.title}}</h5>
-                    
-                    <a href="/record/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
+    <h1>Records found</h1>
+    <div class="container justify-content-center">
+        <div class="row">
+            {{#each data.results}}
+            <div class="col-md-4">
+                <div class="card artist-container shadow-sm" style="width: 18rem;">
+                    <img src="{{this.cover_image}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <a href="/record/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
+                    </div>
                 </div>
             </div>
+            {{/each}}
         </div>
-
-        {{/each}}
     </div>
-</div>
 </main>
-
-

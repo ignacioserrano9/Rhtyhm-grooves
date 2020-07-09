@@ -38,7 +38,6 @@ router.post("/record/addcollection", ensureLogin.ensureLoggedIn(), (req, res, ne
 
 router.post("/record/delete", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const { id } = req.body
-  console.log(req.body)
   Disk
     .deleteOne({ _id: id})
     .then(() => res.redirect('/user/:_id/collection'))
