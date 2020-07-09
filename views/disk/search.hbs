@@ -5,7 +5,7 @@
             {{#each data.results}}
             <div class="col-md-4">
                 <div class="card artist-container shadow-sm" style="width: 18rem;">
-                    <img src="{{this.cover_image}}" class="card-img-top" alt="">
+                    <a href="/record/{{this.id}}"></a><img src="{{this.cover_image}}" class="card-img-top" alt=""></a>
                     <div class="card-body">
                         <h5 class="card-title">{{this.title}}</h5>
                         <a href="/record/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
