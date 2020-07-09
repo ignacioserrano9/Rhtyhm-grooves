@@ -12,7 +12,15 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        default:'/images/avatar.png',
+        default:'/images/avatar.png'
+    },
+    email: {
+        type: String,
+        default:'1234@grooves.com'
+    },
+    genres: {
+        type: String,
+        default:'death metal'
     },
     role: {
         type: String,
