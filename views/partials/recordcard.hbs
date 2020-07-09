@@ -3,11 +3,16 @@
         <img src="{{image}}" class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">{{title}}</h5>
-            <a href="/record/{{discId}}" class="btn btn-primary">Ver Detalles</a>
+
+            <div class='row'>
+            <a href="/record/{{discId}}" class="btn btn-secondary">Ver Detalles</a>
             <form action="/record/delete" method="post">
                 <input class="invForm" type="string" id="id" name='id' value="{{_id}}">
-                <a href='#'><button type="submit" class="btn btn-primary">Delete</button></a>
+
+                <a href='#'><button type="submit" class="btn btn-secondary">Delete</button></a>
+
             </form>
+            </div>
         </div>
     </div>
 </div>

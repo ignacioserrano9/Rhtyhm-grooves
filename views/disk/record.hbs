@@ -46,11 +46,58 @@
                 </article>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="row">
             <div class="col-12 align-self-center">
                 <br><br>
                 <p>Notes: {{notes}}</p>
             </div>
+=======
+        <div class="col-4">
+            <article>
+                <div class="btn-add">
+
+                    <form action="/record/addcollection" method="post">
+
+                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
+
+                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
+
+                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+                        <a href='#'><button type="submit" class="btn btn-secondary">Add to Collection</button></a>
+
+                    </form>
+
+                    <form action="/record/addwishlist" method="post">
+
+                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
+
+                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
+
+                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
+
+                        <a href='#'><button type="submit" class="btn btn-secondary">Add to Wishlist</button></a>
+
+                    </form>
+                </div>
+                <br>
+                <h3>Track List</h3>
+                {{#each tracklist}}
+                <ul class='description-tracklist'>
+                    <li>{{title}} {{duration}}</li>
+                </ul>
+                {{/each}}
+            </article>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-12 align-self-center">
+            <br><br>
+            <p>Notes: {{notes}}</p>
+>>>>>>> 0279d55538b92f45409d2042ed17481d66ae9482
         </div>
         <iframe id="video" width="420" height="315" src="{{videos.0.uri}}"></iframe>
     </div>

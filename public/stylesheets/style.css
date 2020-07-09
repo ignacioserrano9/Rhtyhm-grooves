@@ -10,6 +10,9 @@ h3 {
 .profile {
   font-size: 4em; }
 
+.profile-img {
+  border-radius: 30px; }
+
 .navbar {
   margin-bottom: 70px; }
 
@@ -51,17 +54,23 @@ h3 {
 .btn-primary {
   color: #fff;
   background-color: #007bff;
-  border-color: #007bff; }
+  border-color: #007bff;
+  margin: 15px; }
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d; }
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 12px; }
+
+.btn-outline-success {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff; }
 
 .btn-add {
   display: flex;
-  justify-content: space-between;
-  margin-left: 15px; }
+  justify-content: space-between; }
 
 img {
   width: 300px; }
