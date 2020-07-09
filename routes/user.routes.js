@@ -36,8 +36,6 @@ router.post("/record/addcollection", ensureLogin.ensureLoggedIn(), (req, res, ne
     .catch(err => next(new Error(err)))
 })
 
-
-
 router.post("/record/delete", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const { id } = req.body
   console.log(req.body)
@@ -47,9 +45,6 @@ router.post("/record/delete", ensureLogin.ensureLoggedIn(), (req, res, next) => 
     .catch(err => next(new Error(err)))
 })
 
-
-
-
 router.post("/record/addwishlist", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const { discId, image, title } = req.body
   const wishlistOwner = req.user._id
@@ -58,8 +53,6 @@ router.post("/record/addwishlist", ensureLogin.ensureLoggedIn(), (req, res, next
     .then(() => res.redirect('/user/:_id/wishlist'))
     .catch(err => next(new Error(err)))
 })
-
-
 
 router.get('/user/:_id/collection', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   const userId = User.findById(req.user._id)
