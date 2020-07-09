@@ -2,14 +2,19 @@ body {
   font-weight: 200;
   background: url('../images/florencia-viadana-_dsn6W2phuE-unsplash.jpg');
   background-size: cover no-repeat;
-  font-family: 'Merienda One',
-  cursive;
+  font-family: 'Monda',
+  sans-serif;
 }
 
 h1,
 h2,
 h3 {
   font-weight: 200;
+}
+
+p, ul {
+  font-family: 'Monda', sans-serif;
+
 }
 
 .profile{
@@ -42,7 +47,7 @@ h3 {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .button-collection {
@@ -76,6 +81,7 @@ h3 {
   background-color: #007bff;
   border-color: #007bff;
   margin: 15px;
+  font-size: 1.2em,
 }
 
 .btn-secondary {

@@ -6,8 +6,7 @@
         <div class='row justify-content-around'>
         <div class="col-md-4">
         <img class='profile-img' src="{{user.avatar}}" alt="Profile Picture">
-       <p>Email: {{user.email}}</p> 
-       <p>generos: {{user.genres}}</p> 
+
         </div>
 
         <div class="col-md-8">
@@ -18,6 +17,10 @@
             <a href='/user/{{user._id}}/wishlist'><button class='button-collection btn-primary'>Ver Lista Deseados!</button></a>
             <a href='/user/{{user._id}}/edit'><button class='button-collection btn-primary'>Editar Perfil</button></a>
 
+        </p>
+        <p>
+            <p>Email: {{user.email}}</p>
+            <p>Generos: {{user.genres}}</p>
         </p>
         
         </div>
