@@ -1,6 +1,9 @@
 body {
   font-weight: 200;
-  background: url('../images/records.jpg');
+  background: url('../images/florencia-viadana-_dsn6W2phuE-unsplash.jpg');
+  background-size: cover no-repeat;
+  font-family: 'Merienda One',
+  cursive;
 }
 
 h1,
@@ -19,6 +22,11 @@ h3 {
 
 .navbar {
   margin-bottom: 70px;
+  font-size: 1.1em;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
 }
 
 #errorMsg {
