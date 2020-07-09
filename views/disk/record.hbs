@@ -26,17 +26,17 @@
                             <input class="invForm" type="text" id="image" name='image'
                                 value="{{images.0.resource_url}}">
                             <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-                            <a href='#'><button type="submit" class="btn btn-primary">Add to Collection</button></a>
+                            <a href='#'><button type="submit" class="btn btn-secondary">Add to Collection</button></a>
                         </form>
                         <form action="/record/addwishlist" method="post">
                             <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
                             <input class="invForm" type="text" id="image" name='image'
                                 value="{{images.0.resource_url}}">
                             <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-                            <a href='#'><button type="submit" class="btn btn-primary">Add to Wishlist</button></a>
+                            <a href='#'><button type="submit" class="btn btn-secondary">Add to Wishlist</button></a>
                         </form>
                     </div>
-                    <br><br>
+                    <br>
                     <h3>Track List</h3>
                     {{#each tracklist}}
                     <ul class='description-tracklist'>
@@ -46,46 +46,8 @@
                 </article>
             </div>
         </div>
-        <div class="col-4">
-            <article>
-                <div class="btn-add">
+        
 
-                    <form action="/record/addcollection" method="post">
-
-                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
-
-                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
-
-                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-
-                        <a href='#'><button type="submit" class="btn btn-secondary">Add to Collection</button></a>
-
-                    </form>
-
-                    <form action="/record/addwishlist" method="post">
-
-                        <input class="invForm" type="number" id="discId" name='discId' value="{{id}}">
-
-                        <input class="invForm" type="text" id="image" name='image' value="{{images.0.resource_url}}">
-
-                        <input class="invForm" type="text" id="title" name='title' value="{{title}}">
-
-                        <a href='#'><button type="submit" class="btn btn-secondary">Add to Wishlist</button></a>
-
-                    </form>
-                </div>
-                <br>
-                <h3>Track List</h3>
-                {{#each tracklist}}
-                <ul class='description-tracklist'>
-                    <li>{{title}} {{duration}}</li>
-                </ul>
-                {{/each}}
-            </article>
-
-        </div>
-
-    </div>
     <div class="row">
         <div class="col-12 align-self-center">
             <br><br>
