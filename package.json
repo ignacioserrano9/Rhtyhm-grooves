@@ -8,7 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.22.0",
     "connect-ensure-login": "^0.1.1",
